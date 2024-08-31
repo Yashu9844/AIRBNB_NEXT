@@ -143,14 +143,14 @@ if(!isOpen){
                 >
                 {secondaryAction && secondaryActionLabel && (
                       <Button 
-                      onClick={()=>{}}
+                      onClick={handleSubmit}
                        disabled={disabled}
                        label={secondaryActionLabel}
                       
                       />
                 )}
                   <Button 
-                  onClick={()=>{}}
+                  onClick={handleSubmit}
                    disabled={disabled}
                    label={actionLabel}
                   
