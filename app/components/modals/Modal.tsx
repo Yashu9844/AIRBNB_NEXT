@@ -5,23 +5,29 @@ import { IoMdClose } from "react-icons/io";
 import Button from "../Button";
 
 interface ModalProps {
-  isOpen?: boolean;
-  onClose: () => void;
-  onSubmit: () => void;
-  title?: string;
-  disabled?: boolean;
-  body?: string;
-  actionLabel?: string;
+    isOpen?: boolean;
+    onClose: () => void;
+    onSubmit:()=>void;
+    title?: string;
+    body?:React.ReactElement;
+    footer?: React.ReactElement;
+    actionLabel?: string;
+    disabled?: boolean;
+    secondaryAction?: ()=>void;
+    secondaryActionLabel?:string;
 }
 
 const Modal: React.FC<ModalProps> = ({
-  isOpen,
-  onClose,
-  onSubmit,
-  title,
-  disabled,
-  body,
-  actionLabel
+    isOpen,
+    onClose,
+    onSubmit,
+    title,
+    body,
+    footer,
+    actionLabel,
+    disabled ,
+    secondaryAction,
+    secondaryActionLabel
 }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
@@ -29,20 +35,35 @@ const Modal: React.FC<ModalProps> = ({
     setShowModal(isOpen);
   }, [isOpen]);
 
-  const handleClose = useCallback(() => {
-    if (disabled) {
-      return;
+  const handleClose = useCallback(()=>{
+    if(disabled){
+        return;
     }
-    setShowModal(false);
-    setTimeout(() => {
-      onClose();
-    }, 300);
-  }, [disabled, onClose]);
+   setShowModal(false);
+   setTimeout(()=>{
+    onClose();
+   },300);
 
-  if (!isOpen) {
+
+},[disabled,onClose])
+
+const handleSubmit = useCallback(()=>{
+    if(disabled){
+        return;
+    }
+   onSubmit();
+},[disabled,onSubmit]);
+
+const handleSecondaryAction = useCallback(()=>{
+    if(disabled || !secondaryAction){
+        return;
+    }
+   secondaryAction();
+},[disabled,secondaryAction]);
+
+if(!isOpen){
     return null;
-  }
-
+}
   return (
     <>
       <div
@@ -120,7 +141,16 @@ const Modal: React.FC<ModalProps> = ({
                     w-full
                   "
                 >
+                {secondaryAction && secondaryActionLabel && (
+                      <Button 
+                      onClick={()=>{}}
+                       disabled={disabled}
+                       label={secondaryActionLabel}
+                      
+                      />
+                )}
                   <Button 
+                  onClick={()=>{}}
                    disabled={disabled}
                    label={actionLabel}
                   
@@ -136,3 +166,4 @@ const Modal: React.FC<ModalProps> = ({
 };
 
 export default Modal;
+
