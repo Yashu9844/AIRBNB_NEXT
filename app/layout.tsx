@@ -5,6 +5,7 @@ import Nav from "./components/navbar/Nav";
 import Modal from "./components/modals/Modal";
 import RegisterModal from "./components/modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
+import LoginModal from "./components/modals/LoginModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ToasterProvider/>
-     <RegisterModal/>
+        <LoginModal/>
+         <RegisterModal/>
         <Nav/>
         {children}</body>
     </html>
