@@ -1,12 +1,13 @@
 "use client"
-import { User } from "@prisma/client"
+
 import Container from "../Container"
 import Logo from "./Logo"
 import Search from "./Search"
 import UserMenu from "./UserMenu"
+import { SafeUser } from "@/app/types/types"
 
 interface NavProps {
-  currentUser? : User | null
+  currentUser? : SafeUser | null
 }
 
 
