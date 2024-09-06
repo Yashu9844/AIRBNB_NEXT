@@ -18,25 +18,29 @@ enum STEPS{
 
 }
 
-const {register,handleSubmit,setValue,watch,formState:{errors,},reset} = useForm<FieldValues>({
-    defaultValues: {
-        category: '',
-        location: null,
-        guestCount:1,
-        roomCount:1,
-        bathroomCount:1,
-        imageSrc:'',
-        price:1,
-        description:'',
-        tile:''
-    }
-})
+
 
 
 const RentModal = () => {
     const rentModal = useRentModalStore();
 
   const [step, setStep] = useState(STEPS.CATEGORY);
+
+  const { register, handleSubmit, setValue, watch, formState: { errors }, reset } = useForm<FieldValues>({
+    defaultValues: {
+        category: '',
+        location: null,
+        guestCount: 1,
+        roomCount: 1,
+        bathroomCount: 1,
+        imageSrc: '',
+        price: 1,
+        description: '',
+        title: '' // Fixed typo
+    }
+});
+
+const category = watch('category');
 
   const onNext = () => {
     setStep((prevStep) => prevStep + 1);
