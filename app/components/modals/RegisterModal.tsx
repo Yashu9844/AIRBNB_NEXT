@@ -12,6 +12,7 @@ import Input from "../inputs/Input";
 import toast from "react-hot-toast";
 import Button from "../Button";
 import { signIn } from "next-auth/react";
+import useLoginModalStore from "@/app/hooks/useLoginModal";
 
 
 // type FeildValue = {
@@ -22,6 +23,7 @@ import { signIn } from "next-auth/react";
 
 const RegisterModal = () => {
     const registerModal = useRegisterModalStore();
+    const loginModal = useLoginModalStore();
     const [isLoading, setIsLoading] = useState(false);
     const { register, handleSubmit , formState:{
         errors,
@@ -35,6 +37,7 @@ const RegisterModal = () => {
         
         await axios.post('/api/auth/register', data)
             .then(() => { registerModal.onClose();
+                loginModal.onOpen();
                 toast.success("Registration successful!");
              })
             .catch((error):any => {
@@ -44,7 +47,10 @@ const RegisterModal = () => {
                 setIsLoading(false);
             });
     };
-
+const toggle = useCallback(()=>{
+    registerModal.onClose();
+    loginModal.onOpen();
+},[registerModal,loginModal]);
  const bodyContent =()=>
  <div className="flex flex-col gap-4">
     <Heading
@@ -106,7 +112,7 @@ const RegisterModal = () => {
                     Already have an account?
                 </div>
                 <div
-                onClick={registerModal.onClose}
+                onClick={toggle}
                 className="text-neutral-800
                 cursor-pointer hover:underline">
                    Login
