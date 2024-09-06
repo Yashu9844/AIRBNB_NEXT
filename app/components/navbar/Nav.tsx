@@ -1,6 +1,7 @@
 "use client"
 
 import Container from "../Container"
+import Catagoris from "./Catagoris"
 import Logo from "./Logo"
 import Search from "./Search"
 import UserMenu from "./UserMenu"
@@ -39,6 +40,10 @@ console.log({currentUser})
     </Container>
 
        </div>
+
+    <Catagoris/>
+
+
     </div>
   )
 }
