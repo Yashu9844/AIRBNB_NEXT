@@ -1,3 +1,5 @@
+
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,6 +9,7 @@ import RegisterModal from "./components/modals/RegisterModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
+import RentModal from "./components/modals/RentModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +29,7 @@ const currentUser = await getCurrentUser();
     <html lang="en">
       <body className={inter.className}>
         <ToasterProvider/>
+        <RentModal/>
         <LoginModal/>
          <RegisterModal/>
         <Nav currentUser = {currentUser}/>
