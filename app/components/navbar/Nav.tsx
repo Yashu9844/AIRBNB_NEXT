@@ -15,7 +15,7 @@ interface NavProps {
 
 const Nav:React.FC<NavProps> = ({currentUser}) => {
  
-console.log({currentUser})
+
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
        <div className="
