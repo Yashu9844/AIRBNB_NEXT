@@ -9,6 +9,7 @@ import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 import CountrySelect from "../inputs/CountrySelect";
+import Counter from "../inputs/Counter";
 
 
 
@@ -46,6 +47,9 @@ const RentModal = () => {
 
 const category = watch('category');
 const location = watch('location');
+const guestCount = watch('guestCount');
+const roomCount = watch('roomCount');
+const bathroomCount = watch('bathroomCount');
 
 const Map = useMemo(()=>dynamic(()=>import('../Map'),{
     ssr:false
@@ -130,6 +134,27 @@ let bodyContent = (
             title="Share some basics about your place"
             subtitle="What amenities do you have?"
             center={false}
+            />
+            <hr />
+            <Counter
+            title=" Guests"
+            subtitle="How many guests do you allow?"
+            value={guestCount}
+            onChange={(value)=>setCustomValue('guestCount',value)}
+            />
+            <hr />
+            <Counter
+            title="Rooms"
+            subtitle="How many Rooms do you have?"
+            value={roomCount}
+            onChange={(value)=>setCustomValue('roomCount',value)}
+            />
+            <hr />
+            <Counter
+            title=" Bathrooms"
+            subtitle="How many Bathrooms do you have?"
+            value={bathroomCount}
+            onChange={(value)=>setCustomValue('bathroomCount',value)}
             />
         </div>
     )
