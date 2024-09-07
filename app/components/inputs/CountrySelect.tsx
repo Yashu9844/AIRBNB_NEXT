@@ -2,7 +2,7 @@
 
 import useCountries from "@/app/hooks/useCountry";
 import Select from "react-select";
-import Flag from 'react-world-flags'
+import Flag from "react-world-flags"
 
 export type CountrySelectValue = {
   flag: string;
