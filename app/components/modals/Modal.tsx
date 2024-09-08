@@ -144,6 +144,7 @@ if(!isOpen){
                 >
                 {secondaryAction && secondaryActionLabel && (
                       <Button 
+                      outline
                       onClick={handleSecondaryAction}
                        disabled={disabled}
                        label={secondaryActionLabel}

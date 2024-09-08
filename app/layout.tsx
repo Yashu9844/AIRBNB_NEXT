@@ -33,7 +33,10 @@ const currentUser = await getCurrentUser();
         <LoginModal/>
          <RegisterModal/>
         <Nav currentUser = {currentUser}/>
-        {children}</body>
+        
+        
+    <div className="pb-20 pt-28">
+      {children}</div></body>
     </html>
   );
 }
