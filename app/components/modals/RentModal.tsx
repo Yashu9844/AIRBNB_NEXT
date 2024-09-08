@@ -51,6 +51,7 @@ const location = watch('location');
 const guestCount = watch('guestCount');
 const roomCount = watch('roomCount');
 const bathroomCount = watch('bathroomCount');
+const imageSrc = watch('imageSrc');
 
 const Map = useMemo(()=>dynamic(()=>import('../Map'),{
     ssr:false
@@ -169,7 +170,10 @@ if(step === STEPS.IMAGES){
             title="Add a Photo of your place"
             subtitle="Show guests what your place looks like!"
             />
- <ImageUpload/>
+ <ImageUpload
+  value={imageSrc}
+  onChange={(value)=>setCustomValue('imageSrc',value)}
+ />
 
         </div>
     )
