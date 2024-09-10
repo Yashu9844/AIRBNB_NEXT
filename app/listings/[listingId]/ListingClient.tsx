@@ -2,6 +2,7 @@
 
 import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listings/ListingHead";
+import ListingInfo from "@/app/components/listings/ListingInfo";
 import { categories } from "@/app/components/navbar/Catagoris";
 import { SafeListings, SafeUser } from "@/app/types/types";
 import { Reservation } from "@prisma/client";
@@ -42,7 +43,7 @@ const category = useMemo(()=>{
             guestCount = {listing.guestCount}
             bathroomCount = {listing.bathroomCount}
             locationValue = {listing.locationValue}
-            
+            roomCount = {listing.roomCount}
             />
 
 

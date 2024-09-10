@@ -1,0 +1,67 @@
+"use client"
+import useCountries from "@/app/hooks/useCountry";
+import { SafeUser } from "@/app/types/types";
+import { IconType } from "react-icons";
+import Avatar from "../Avatar";
+
+interface ListingInfoProps{
+user:SafeUser
+    description:string;
+    bathroomCount:number;
+    guestCount: number;
+    locationValue:string;
+    roomCount:number;
+    category:{
+        icon:IconType;
+        label:string;
+        description:string;
+    }| undefined;
+
+}
+
+
+const ListingInfo:React.FC<ListingInfoProps> = ({
+    user,
+    description,
+    bathroomCount,
+    guestCount,
+    locationValue,
+    category,
+    roomCount
+  
+}) => {
+ const {getByValue} = useCountries();
+ const coordinates = getByValue(locationValue)?.latlng;
+
+
+  return (
+    <div className="col-span-4 flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
+            <div className="text-lg font-semibold flex flex-row items-center gap-4">
+                <div className="">Hosted by  {user?.name}</div>
+                <Avatar src={user?.image} />
+            </div>
+            <div className="flex items-center 
+            gap-4 font-light text-neutral-500
+            ">
+              <div className="">
+                {guestCount} guests
+              </div>
+              <div className="">
+                {roomCount} rooms
+              </div>
+              <div className="">
+                {bathroomCount} bathrooms
+              </div>
+
+            </div>
+        </div>
+
+        <hr />
+        
+      
+    </div>
+  );
+};
+
+export default ListingInfo;
