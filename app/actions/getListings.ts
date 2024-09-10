@@ -1,6 +1,7 @@
 import prisma from '@/app/libs/prismadb'
 
 
+
 export default async function getListings(){
     try {
  
@@ -9,7 +10,13 @@ export default async function getListings(){
                 createdAt: 'desc',
             }
         })
-          return listings;
+         const safeListings = listings.map((list)=>({
+            ...list,
+            createdAt: list.createdAt.toISOString(),
+            key:list.id
+         }))
+
+         return safeListings;
         
     } catch (error:any) {
         throw new Error(error)
