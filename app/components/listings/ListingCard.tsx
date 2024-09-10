@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import {format} from 'date-fns'
 import Image from "next/image";
+import HeartButton from "../HeartButton";
+import Button from "../Button";
 
 interface ListingCardProps{
     data:Listing;
@@ -83,8 +85,38 @@ return `${format(start,'PP')} - ${format(end,'PP')}`
     className="object-cover h-full w-full group-hover:scale-110
     transition-transform duration-500  "
     />
-
+      <div className="absolute top-3 right-3">
+        <HeartButton
+        listingId = {data.id}
+        currentUser={currentUser}
+        />
+      </div>
         </div>
+
+        <div className="font-semibold text-lg">
+            {location?.region},{location?.label}
+        </div>
+             <div className="font-light text-neutral-500 ">
+                {reserationDate || data.category}
+             </div>
+             <div className="flex flex-row items-center gap-2">
+                <div className="font-semibold">
+                    ${price}
+                </div>
+               {
+                !reservation && (
+                    <div className="font-light">night</div>
+                )
+               }
+             </div>
+             {onAction && actionLabel && (
+                <Button
+                label={actionLabel}
+                disabled={disabled}
+                small
+                onClick={handleCancel}
+                />
+             )}
       </div>
     </div>
   );
