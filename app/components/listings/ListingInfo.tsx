@@ -3,6 +3,7 @@ import useCountries from "@/app/hooks/useCountry";
 import { SafeUser } from "@/app/types/types";
 import { IconType } from "react-icons";
 import Avatar from "../Avatar";
+import ListingCategory from "./ListingCategory";
 
 interface ListingInfoProps{
 user:SafeUser
@@ -58,7 +59,16 @@ const ListingInfo:React.FC<ListingInfoProps> = ({
         </div>
 
         <hr />
-        
+        {
+              category && (
+                <ListingCategory
+                icon={category.icon}
+                description={category.description}
+                label={category.label}
+                />
+              )
+        }
+        <hr />
       
     </div>
   );
