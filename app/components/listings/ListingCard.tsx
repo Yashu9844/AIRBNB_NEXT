@@ -6,6 +6,7 @@ import { Listing, Reservation } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import {format} from 'date-fns'
+import Image from "next/image";
 
 interface ListingCardProps{
     data:Listing;
@@ -68,8 +69,23 @@ return `${format(start,'PP')} - ${format(end,'PP')}`
 
 
   return (
-    <div>
-      ListingCard
+    <div className="col-span-1  cursor-pointer group"
+    onClick={()=>router.push(`/listings/${data.id}`)}
+    >
+      <div className="flex flex-col gap-2 w-full">
+        <div className="aspect-square w-full relative overflow-hidden
+        rounded-xl
+        ">
+    <Image
+    fill
+    src={data.imageSrc}
+    alt="your image"
+    className="object-cover h-full w-full group-hover:scale-110
+    transition-transform duration-500  "
+    />
+
+        </div>
+      </div>
     </div>
   );
 };
