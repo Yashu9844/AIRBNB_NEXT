@@ -79,8 +79,10 @@ axios.post('/api/reservations',{
   endDate: dateRange.endDate,
   listingId: listing?.id,
 }).then(()=>{
-  toast.success('Your Reservation is success !')
-  
+  toast.success('Your Reservation is success !');
+  setDateRange(intialDateRange);
+  router.push('/trips')
+  router.refresh();
 }).catch((error)=>{
   toast.error('Reservation failed!')
 }).finally(()=>setIsLoading(false))

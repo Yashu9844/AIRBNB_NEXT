@@ -33,7 +33,7 @@ const onCancel = useCallback((id:string)=>{
    }
    
     ).catch((error)=>{
-        toast.error(error?.response?.data?.data)
+        toast.error("something went wrong")
     }).finally(()=>setDeletingId(''))
 
 },[router])
