@@ -1,10 +1,11 @@
 import getCurrentUser from "../actions/getCurrentUser";
 import getReservations from "../actions/getReservation";
 import EmptyState from "../components/EmptyState";
-import TripsClient from "./TripsClient";
+import ReservationClient from "./ReservationClient";
 
-const TripsPage =async () => {
+const ReservationPage = async() => {
 
+    
  const currentUser = await getCurrentUser();
 
  if(!currentUser){
@@ -17,27 +18,22 @@ const TripsPage =async () => {
 
 
  const reservation = await getReservations({
-    userId: currentUser.id,
+    authorId:currentUser.id,
  })
 
  if(reservation.length === 0){
     return <EmptyState 
     title="No trips found"
-    subtitle="You haven't register any trips yet."
+    subtitle="You dont have registretion on your property."
     
     />;
  }
 
-
-
-
   return (
-        <TripsClient
-        reservations={reservation}
-        currentUser={currentUser}
-        />
+    <ReservationClient
+    currentUser={currentUser}
+    reservations={reservation}/>
   );
 };
 
-export default TripsPage;
-
+export default ReservationPage;
