@@ -13,6 +13,7 @@ import { error } from "console";
 import { differenceInCalendarDays, differenceInDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { Range } from "react-date-range";
 import toast from "react-hot-toast";
 
 
@@ -39,7 +40,7 @@ const category = useMemo(()=>{
 
 const [isLoading,setIsLoading] = useState(false);
 const [totalPrice,setTotalPrice] = useState(listing.price)
-const [dateRange,setDateRange] = useState(intialDateRange)
+const [dateRange,setDateRange] = useState<Range>(intialDateRange)
 
 
  
@@ -78,10 +79,10 @@ axios.post('/api/reservations',{
   endDate: dateRange.endDate,
   listingId: listing?.id,
 }).then(()=>{
-  toast.success('Reservation created successfully!')
+  toast.success('Your Reservation is success !')
   
 }).catch((error)=>{
-  toast.error('Something went wrong!')
+  toast.error('Reservation failed!')
 }).finally(()=>setIsLoading(false))
 
 
