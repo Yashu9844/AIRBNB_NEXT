@@ -41,7 +41,7 @@ const RegisterModal = () => {
                 toast.success("Registration successful!");
              })
             .catch((error):any => {
-               toast.error("Something went wrong.")
+               toast.error("Something went wrong")
             })
             .finally(() => {
                 setIsLoading(false);
@@ -99,7 +99,7 @@ const toggle = useCallback(()=>{
         />
         <Button
         outline
-        label="Continue with Google"
+        label="Continue with Github"
         icon={AiFillGithub}
         onClick={()=>{signIn('github')}}
         />
