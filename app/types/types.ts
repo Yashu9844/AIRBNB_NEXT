@@ -27,3 +27,9 @@ Reservation,
   listing: SafeListings;
   
 }
+
+export type SafeFav = Omit<
+Listing,'createdAt'
+> & {
+  createdAt: string;
+}
