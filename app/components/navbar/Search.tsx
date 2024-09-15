@@ -1,11 +1,56 @@
 "use client"
 
+import useCountries from "@/app/hooks/useCountry";
 import useSearchModalStore from "@/app/hooks/useSearchModal";
+import { differenceInDays } from "date-fns";
+import { useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 
 const Search = () => {
 
    const searchModal = useSearchModalStore();
+   const params = useSearchParams();
+   const {getByValue} = useCountries();
+
+   const locationValue = params?.get("locationValue");
+   const startDate = params?.get("startDate");
+   const endDate = params?.get("endDate");
+   const guestCount = params?.get("guestCount");
+
+const locationLabel = useMemo(()=>{
+  if (locationValue){
+    return getByValue(locationValue as string)?.label
+   }
+
+   return 'Anywhere'
+  
+},[getByValue , locationValue])
+
+const durationLabel = useMemo(()=>{
+  if(startDate && endDate){
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+    let diff = differenceInDays(end, start)
+    if(diff === 0){
+      diff = 1
+     }
+
+     return `${diff} Days`
+ 
+  }
+ return 'Any Week'
+
+
+},[startDate,endDate])
+
+const guestLabel = useMemo(()=>{
+  if(guestCount){
+    return `${guestCount} Guests`
+  }
+  return 'Add Guests'
+},[guestCount])
+
 
   return (
     <div 
@@ -29,7 +74,7 @@ const Search = () => {
         <div className="
         text-smfont-semibold
         px-6">
-           Anywhere
+           {locationLabel}
         </div>
         <div className="
         hidden
@@ -41,7 +86,7 @@ const Search = () => {
         flex-1
         text-center
         
-        ">Any Week</div>
+        "> {durationLabel}</div>
         <div className="
         text-sm
         flex
@@ -52,7 +97,7 @@ const Search = () => {
         ">
           <div className="
           hidden sm:block">
-            All Guests
+           {guestLabel}
           </div>
           <div className="
           p-2
@@ -62,7 +107,7 @@ const Search = () => {
             <BiSearch size={18}/>
           </div>
         </div>
-
+             
         </div>
       
     </div>

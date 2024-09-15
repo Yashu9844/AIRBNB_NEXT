@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
-import { get } from "http";
+
 import getListings, { IListingParams } from "./actions/getListings";
 import ListingCard from "./components/listings/ListingCard";
 import getCurrentUser from "./actions/getCurrentUser";
-import { SafeListings } from "./types/types";
+
 
 
 interface HomeProps{
