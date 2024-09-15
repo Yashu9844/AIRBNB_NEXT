@@ -23,7 +23,7 @@ if(listings.length === 0) {
    )
 }
 
-
+// throw new Error("Something went wrong") check error component
 
   return (
  <Container>
