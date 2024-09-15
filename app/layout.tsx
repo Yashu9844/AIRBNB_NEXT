@@ -1,8 +1,8 @@
 
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 import Nav from "./components/navbar/Nav";
 import Modal from "./components/modals/Modal";
 import RegisterModal from "./components/modals/RegisterModal";
@@ -24,21 +24,33 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-const currentUser = await getCurrentUser();
+  // Get current user asynchronously
+  const currentUser = await getCurrentUser();
 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ToasterProvider/>
-        <SearchModal/>
-        <RentModal/>
-        <LoginModal/>
-         <RegisterModal/>
-        <Nav currentUser = {currentUser}/>
-        
-        
-    <div className="pb-20 pt-28">
-      {children}</div></body>
+        <ToasterProvider />
+        {/* Suspense for modals and navigation */}
+        <Suspense fallback={<div>Loading modals...</div>}>
+          <SearchModal />
+          <RentModal />
+          <LoginModal />
+          <RegisterModal />
+        </Suspense>
+
+        {/* Suspense for Navigation (depending on currentUser) */}
+        <Suspense fallback={<div>Loading navigation...</div>}>
+          <Nav currentUser={currentUser} />
+        </Suspense>
+
+        {/* Main content */}
+        <div className="pb-20 pt-28">
+          <Suspense fallback={<div>Loading content...</div>}>
+            {children}
+          </Suspense>
+        </div>
+      </body>
     </html>
   );
 }
