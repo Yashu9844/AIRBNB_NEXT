@@ -33,7 +33,7 @@ if(listings.length === 0) {
     ">
       {listings.map((listing)=>{
         return(
-          <div className="" >
+          <div className="" key={listing.id} >
            <ListingCard
             data={listing}
             key={listing.id}
