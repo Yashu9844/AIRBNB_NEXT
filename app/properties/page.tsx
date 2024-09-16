@@ -1,6 +1,7 @@
 import getCurrentUser from "../actions/getCurrentUser";
 import getListings from "../actions/getListings";
 import getReservations from "../actions/getReservation";
+import ClientOnly from "../components/ClientOnly";
 import EmptyState from "../components/EmptyState";
 import PropertiesClient from "./PropertiesClient";
 
@@ -23,21 +24,27 @@ const PropertiesPage =async () => {
     })
    
     if(listing.length === 0){
-       return <EmptyState 
+       return (
+         <ClientOnly>
+            <EmptyState 
        title="No properties found"
        subtitle="You haven't have any properties yet."
        
        />;
+         </ClientOnly>
+       )
     }
    
    
    
    
      return (
-           <PropertiesClient
+          <ClientOnly>
+             <PropertiesClient
            listing={listing}
            currentUser={currentUser}
            />
+          </ClientOnly>
      );
    };
 
