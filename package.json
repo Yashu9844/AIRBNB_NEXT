@@ -31,6 +31,7 @@
     "react-select": "^5.8.0",
     "react-spinners": "^0.14.1",
     "react-world-flags": "^1.6.0",
+    "sharp": "^0.33.5",
     "world-countries": "^5.0.0",
     "zustand": "^4.5.5"
   },

@@ -1,67 +1,67 @@
 import { NextResponse } from "next/server";
 import getCurrentUser from "@/app/actions/getCurrentUser";
-import prisma from '@/app/libs/prismadb';
+import prisma from '@/app/libs/prismadb'
 
-interface IParams {
-  listingId?: string;
+
+interface IParams{
+    listingId?: string;
 }
 
-export async function POST(request: Request, { params }: { params: IParams }) {
-  const currentUser = await getCurrentUser();
 
-  if (!currentUser) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
+export async function POST(request: Request,{params}:{params:IParams}){
+    const currentUser = await getCurrentUser();
 
-  const { listingId } = params;
+    if(!currentUser){
+        return NextResponse.error();
+    }
+ const {listingId} = params;
 
-  if (!listingId || typeof listingId !== "string") {
-    return NextResponse.json({ error: 'Invalid listingId' }, { status: 400 });
-  }
+ if(!listingId || typeof listingId !== "string"){
+    throw new Error("listingId must be a string or Not Found Listing Id");
+ }
+let favoriteIds = [...(currentUser.favoriteIds || [])]
 
-  let favoriteIds = [...(currentUser.favoriteIds || [])];
-  if (!favoriteIds.includes(listingId)) {
-    favoriteIds.push(listingId);
-  }
+favoriteIds.push(listingId);
 
-  try {
-    const user = await prisma.user.update({
-      where: { id: currentUser.id },
-      data: { favoriteIds: favoriteIds },
-    });
+const user = await prisma.user.update({
+    where:{
+        id:currentUser.id
+    },
+    data:{
+        favoriteIds:favoriteIds,
+    }
+})
 
-    return NextResponse.json(user);
-  } catch (error) {
-    console.error("Error updating user favorites:", error);
-    return NextResponse.json({ error: 'Failed to update favorites' }, { status: 500 });
-  }
+return NextResponse.json(user)
+
 }
 
-export async function DELETE(request: Request, { params }: { params: IParams }) {
-  const currentUser = await getCurrentUser();
 
-  if (!currentUser) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
+export async function DELETE(request:Request,{params}:{params:IParams}){
+    const currentUser = await getCurrentUser();
 
-  const { listingId } = params;
+    if(!currentUser){
+        return NextResponse.error();
+    }
+ const {listingId} = params;
 
-  if (!listingId || typeof listingId !== 'string') {
-    return NextResponse.json({ error: 'Invalid listingId' }, { status: 400 });
-  }
+if(!listingId || typeof listingId !== 'string'){
+    throw new Error("listingId must be a string or Not Found Listing Id");
+}
 
-  let favoriteIds = [...(currentUser.favoriteIds || [])];
-  favoriteIds = favoriteIds.filter((id) => id !== listingId);
+let favoriteIds = [...(currentUser.favoriteIds || [])]
 
-  try {
-    const user = await prisma.user.update({
-      where: { id: currentUser.id },
-      data: { favoriteIds: favoriteIds },
-    });
+favoriteIds = favoriteIds.filter((id)=>id!== listingId);
 
-    return NextResponse.json(user);
-  } catch (error) {
-    console.error("Error updating user favorites:", error);
-    return NextResponse.json({ error: 'Failed to update favorites' }, { status: 500 });
-  }
+const user = await prisma.user.update({
+where:{
+    id:currentUser.id
+},
+data:{
+    favoriteIds:favoriteIds,
+}
+
+})
+
+return NextResponse.json(user)
 }
