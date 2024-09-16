@@ -4,7 +4,7 @@ import ClientOnly from "../components/ClientOnly";
 import EmptyState from "../components/EmptyState";
 import FavoritesClient from "./FavoritesClient";
 
-const ListingPage = async () => {
+const ListingsPage = async () => {
   const currentUser = await getCurrentUser();
   const listings = await getFavroiteListings() || [];
 
@@ -32,4 +32,4 @@ const ListingPage = async () => {
   );
 };
 
-export default ListingPage;
+export default ListingsPage;
