@@ -1,4 +1,4 @@
-import { list } from "postcss";
+
 import Container from "../components/Container";
 import Heading from "../components/Heading";
 import {  SafeListings, SafeUser } from "../types/types";
