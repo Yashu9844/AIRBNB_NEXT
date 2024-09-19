@@ -11,19 +11,19 @@ Full Stack Airbnb Clone with Next.js 14 Tailwind-css, Prisma, MongoDB, NextAuth,
 <!-- Badges -->
 <a href="https://airbnb-sclone.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
-![](https://img.shields.io/github/forks/SashenJayathilaka/Airbnb-Build.svg)
-![](https://img.shields.io/github/stars/SashenJayathilaka/Airbnb-Build.svg)
-![](https://img.shields.io/github/issues/SashenJayathilaka/Airbnb-Build)
-![](https://img.shields.io/github/last-commit/SashenJayathilaka/Airbnb-Build)
+![](https://img.shields.io/github/forks/Yashu9844/AIRBNB_NEXT.svg)
+![](https://img.shields.io/github/stars/Yashu9844/AIRBNB_NEXT)
+![](https://img.shields.io/github/issues/Yashu9844/AIRBNB_NEXT)
+![](https://img.shields.io/github/last-commit/Yashu9844/AIRBNB_NEXT)
 
 <h4>
-    <a href="(https://next-pro-3.vercel.app/)">View Demo</a>
+    <a href="https://next-pro-3.vercel.app/">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Airbnb-Build/blob/master/README.md">Documentation</a>
+    <a href="https://github.com/Yashu9844/AIRBNB_NEXT/blob/master/README.md">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Airbnb-Build/issues">Report Bug</a>
+    <a href="https://github.com/Yashu9844/AIRBNB_NEXT/issues">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Airbnb-Build/issues">Request Feature</a>
+    <a href="https://github.com/Yashu9844/AIRBNB_NEXT/issues">Request Feature</a>
   </h4>
 </div>
 
