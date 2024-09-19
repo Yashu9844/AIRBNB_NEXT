@@ -55,16 +55,26 @@ Full Stack Airbnb Clone with Next.js 14 Tailwind-css, Prisma, MongoDB, NextAuth,
 - Reservation functionality & Description and Price, Listing creation, Listing card component
 
 <div align="center">
-<a href="https://next-pro-3.vercel.app"><img  src='./demo/ezgif-4-27f1be5f56.gif' alt='image'/></a>
+<a href="https://airbnb-sclone.vercel.app"><img  src='https://github.com/user-attachments/assets/6ae896aa-6a7a-42c2-acd8-2f81f582d1a9' alt='image'/></a>
+<a href="https://airbnb-sclone.vercel.app"><img  src='https://github.com/user-attachments/assets/56e0057f-5f48-419d-96ca-482748252eb7' alt='image'/></a>
+
+
+
+
 </div>
+
 
 <br />
 
 - Searching functionality Favorite functionality, Individual Listing View, Listing reservation component
 
 <div align="center">
-<a href="https://airbnb-sclone.vercel.app"><img  src='./demo/ezgif-4-8ac9db77ff.gif' alt='image'/></a>
+<a href="https://airbnb-sclone.vercel.app"><img  src='https://github.com/user-attachments/assets/cde11e5c-4f13-463e-9678-8d901c798646' alt='image'/></a>
+  <a href="https://airbnb-sclone.vercel.app"><img  src='https://github.com/user-attachments/assets/c95421bb-12cc-4f77-b196-f53dd2219a92' alt='image'/></a>
 </div>
+
+
+
 
 ## <a href="https://next-pro-3.vercel.app" target="_blank">LIVE DEMO 💥</a>
 
@@ -242,7 +252,7 @@ Install dependencies
 Clone the project
 
 ```bash
-  git clone https://github.com/SashenJayathilaka/Airbnb-Build.git
+  git clone https://github.com/Yashu9844/AIRBNB_NEXT.git
 ```
 
 change directory
@@ -302,16 +312,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## :handshake: Contact
 
-Sashen - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
+Yashavanth R Siddesh - [@twitter_handle](https://twitter.com/Rsiddesh64742) - yashwanthrsiddesh@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/Airbnb-Build.git](https://github.com/Yashu9844/AIRBNB_NEXT.git)
+Project Link: https://github.com/Yashu9844/AIRBNB_NEXT.git
 
 <br />
 
 <div align="center">
-<a href="https://airbnb-sclone.vercel.app"><img  src='https://user-images.githubusercontent.com/99184393/229773559-72e7f64a-361d-4285-976a-00a8919dd783.png' alt='image'/></a>
+<a href="https://next-pro-3.vercel.app"><img  src='https://github.com/user-attachments/assets/95538b74-7c80-4d32-bf28-2ee7e57f5d42' alt='image'/></a>
+<a href="https://next-pro-3.vercel.app"><img  src='https://github.com/user-attachments/assets/0ba70dac-7b25-44aa-8e0d-6b05077545c9' alt='image'/></a>
 </div>
 
 <br />
 
 <div align="center">Don't forget to leave a star ⭐️</div>
+
+
