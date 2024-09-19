@@ -64,7 +64,7 @@ gap-8
 
         onAction={onCancel}
         disabled={deletingId===list.id}
-        actionLabel="Cancel reservation"
+        actionLabel="Remove Property"
         currentUser={currentUser}
         />
     ))}
