@@ -9,7 +9,7 @@ Full Stack Airbnb Clone with Next.js 14 Tailwind-css, Prisma, MongoDB, NextAuth,
   </p>
   
 <!-- Badges -->
-<a href="https://airbnb-sclone.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
+<a href="https://next-pro-3.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
 ![](https://img.shields.io/github/forks/Yashu9844/AIRBNB_NEXT.svg)
 ![](https://img.shields.io/github/stars/Yashu9844/AIRBNB_NEXT)
@@ -55,7 +55,7 @@ Full Stack Airbnb Clone with Next.js 14 Tailwind-css, Prisma, MongoDB, NextAuth,
 - Reservation functionality & Description and Price, Listing creation, Listing card component
 
 <div align="center">
-<a href="https://airbnb-sclone.vercel.app"><img  src='./demo/ezgif-4-27f1be5f56.gif' alt='image'/></a>
+<a href="https://next-pro-3.vercel.app"><img  src='./demo/ezgif-4-27f1be5f56.gif' alt='image'/></a>
 </div>
 
 <br />
@@ -66,7 +66,7 @@ Full Stack Airbnb Clone with Next.js 14 Tailwind-css, Prisma, MongoDB, NextAuth,
 <a href="https://airbnb-sclone.vercel.app"><img  src='./demo/ezgif-4-8ac9db77ff.gif' alt='image'/></a>
 </div>
 
-## <a href="https://airbnb-sclone.vercel.app" target="_blank">LIVE DEMO 💥</a>
+## <a href="https://next-pro-3.vercel.app" target="_blank">LIVE DEMO 💥</a>
 
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 ![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
@@ -231,7 +231,7 @@ Add the `@tailwind` directives for each of Tailwind’s layers to your `./styles
 
 Install dependencies
 
-<a href="https://github.com/SashenJayathilaka/Airbnb-Build/blob/master/package.json" target="_blank">🔶 Dependency Info</a>
+<a href="https://github.com/Yashu9844/AIRBNB_NEXT/blob/master/package.json" target="_blank">🔶 Dependency Info</a>
 
 <!-- Run Locally -->
 
@@ -304,7 +304,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Sashen - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
 
-Project Link: [https://github.com/SashenJayathilaka/Airbnb-Build.git](https://github.com/SashenJayathilaka/Airbnb-Build.git)
+Project Link: [https://github.com/SashenJayathilaka/Airbnb-Build.git](https://github.com/Yashu9844/AIRBNB_NEXT.git)
 
 <br />
 
